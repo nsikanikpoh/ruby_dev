@@ -1,0 +1,18 @@
+Task
+Given the following class:
+
+class TreeNode
+  attr_accessor :val, :left, :right
+
+  def initialize val, left = nil, right = nil
+    @val = val
+    @left = left
+    @right = right
+  end
+end
+complete the function
+
+def binary_tree_compare(a, b)
+which compares the two trees defined by TreeNodes a and b and returns true if they are equal in structure and in value and false otherwise.
+
+Examples
