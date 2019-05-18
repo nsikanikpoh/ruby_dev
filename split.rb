@@ -2,7 +2,7 @@ def splitInteger(num, parts)
    #your code here
 #first creates arrays of number of parts 
   arr_base = Array.new(parts, (num / parts))
-  p arr_base
+  #p arr_base
   #check for even
   remainder = num % parts            
   return arr_base if remainder.zero? #set first arrays as evens arrays
@@ -19,4 +19,4 @@ def splitInteger(num, parts)
   arr_base.sort
 end
 
-p splitInteger(20, 6)
+p splitInteger(21, 6)

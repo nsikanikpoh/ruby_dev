@@ -131,6 +131,7 @@ p "@@@@@@@@@@@@@@@@@@@@@@@@@"
 
 words = ["one", "two", "three", "four", "five"]
 words = words.select.with_index { |word, ix| ix.even? }
+p words
 words = words.map { |word| word.capitalize }
 
 words = words.map.with_index do |word, ix|

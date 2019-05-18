@@ -1,5 +1,5 @@
 def array_converter *arrays
-  arrays.flatten.map(&:to_i)
+  return arrays.flatten.map(&:to_i), arrays.flatten.map{|d| d }.join().to_i
 end
 
 
