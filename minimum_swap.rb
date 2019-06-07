@@ -4,11 +4,10 @@ def minimum_swaps(ratings)
 	m = Hash[ratings.map.with_index {|x, i| [x, i]}]
 	n = ratings.length #number of items in array
 
-	p m
-    p ratings
+	#p m
+    #p ratings
 	sorted_a = ratings.sort.reverse
-	p sorted_a
-
+	#p sorted_a
     ret = 0
 
     for i in 0.upto(n)
@@ -18,12 +17,8 @@ def minimum_swaps(ratings)
            m[ratings[i]] = m[sorted_a[i]]
             ratings[i],ratings[ind_to_swap] = sorted_a[i],ratings[i]
         end
-    	
-
     end
-
     return ret
-
 end
 
 

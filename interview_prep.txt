@@ -1,0 +1,9 @@
+Code Quality
+	impacts how safety, secure and reliable the code base is.
+
+	Good quality means that:
+	     it does what it should do
+	     it is consistent
+	     it is easy to understand
+	     has been well documented
+	     can be tested

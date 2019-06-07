@@ -1,6 +1,5 @@
 def superSize(inp)
-	#inp.digits.join.to_i
-	inp.to_s.split('').sort.reverse.map{|d| d }.join().to_i
+	inp.to_s.chars.sort.reverse.join.to_i
 end
 
 

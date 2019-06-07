@@ -1,4 +1,3 @@
-
 def palindrome_chain_length(n)
   counter = 0
   number = n
