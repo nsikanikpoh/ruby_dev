@@ -4,7 +4,7 @@ def persistence(n)
   #n.digits.reduce(&:*)
 end
 
-
+p persistence(10)
 p persistence(39)
 p persistence(4)
 p persistence(25)

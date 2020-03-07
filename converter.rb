@@ -23,7 +23,7 @@ class Converter
 
   # Hash of numbers associated with alphabets as on a phone keypad.
   def get_keypad
-    @keypad = {
+    @keypad =  {
       "2" => ['a','b','c'],
       "3" => ['d','e','f'],
       "4" => ['g','h','i'],

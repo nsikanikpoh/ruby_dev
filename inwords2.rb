@@ -33,21 +33,20 @@ def in_words(n)
 
 	}
 	res = ""
-
-	num_word_dic.each do |num, name| 
-	if n == 0
-		return res
-	elsif n.to_s.length == 1 && n/num > 0
-		return res + "#{name}"
-	elsif n < 100 && n/num > 0
-		return res + "#{name} " if n%num == 0
-		return res + "#{name} " + in_words(n%num)
-	elsif n/num > 0
-		return res + in_words(n/num) + " #{name} " + in_words(n%num)
+	num_word_dic.each do |num, name|
+		if n == 0
+			return res
+		elsif n.to_s.length == 1 && n/num > 0
+			return res + "#{name}"
+		elsif n < 100 && n/num > 0
+			return res + "#{name}" if n%num == 0
+			return res + "#{name} " + in_words(n%num)
+		elsif n/num > 0
+			return res + in_words(n/num) + " #{name} " + in_words(n%num)
+		end
+									
 	end
-		
-end
-
+	
 end
 
 

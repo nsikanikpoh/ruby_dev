@@ -26,8 +26,9 @@ def convert_word(number)
        "9" => ["w", "x", "y", "z"]}
       stack = []
       keys = number.to_s.chars.map{|digit|letters[digit]}
+      #p keys
       stack << keys.shift.product(*keys).map(&:join) #=> ["ap", "aq", "ar", "as", "bp", "bq", "br", "bs", "cp", "cq", "cr", "cs"]
-      return stack.flatten
+      stack.flatten
 end
 
 p convert_to_phone_number "foobar"

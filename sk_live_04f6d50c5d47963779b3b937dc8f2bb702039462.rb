@@ -1,0 +1,14 @@
+sk_live_04f6d50c5d47963779b3b937dc8f2bb702039462
+
+export ANT_HOME=/path/to/ant/dir
+
+
+
+
+
+
+
+export PUBLIC_KEY_TEST=pk_live_74cff46a62e3d3fec8796135520985aec524fbb2
+
+
+export SECRET_KEY_TEST=sk_live_04f6d50c5d47963779b3b937dc8f2bb702039462

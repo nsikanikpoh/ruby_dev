@@ -73,5 +73,5 @@ p isPrime(5)
 p isPrime(6)
 p isPrime(7)
 p isPrime(2)
-p isPrime(11)
+p isPrime(30)
 
