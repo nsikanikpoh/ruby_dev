@@ -14,14 +14,6 @@ def candies(n, arr)
    dp.sum 
 end
 
-
-#p getTimes2([0,0,1,5], [0,1,1,0])
-p candies(3, [1,2,2])
-p candies(10, [2,4,2,6,1,7,8,9,2,1])
-p candies(8, [2,4,3,5,2,6,4,5])
-
-
-
 def getTimes2(time, direction)
   persons = time.size - 1
   exits = []
@@ -35,3 +27,11 @@ def getTimes2(time, direction)
 
   exits
 end
+
+#p getTimes2([0,0,1,5], [0,1,1,0])
+p candies(3, [1,2,2])
+p candies(10, [2,4,2,6,1,7,8,9,2,1])
+p candies(8, [2,4,3,5,2,6,4,5])
+
+
+

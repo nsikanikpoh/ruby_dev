@@ -1,0 +1,24 @@
+def getMaxOccurrences(s, minLength, maxLength, maxUnique)
+	j = 1
+	n = s.length
+	m_hash = {}
+	while(true)
+		0.upto(n - j + 1) do |i|
+			substr = s[i...i + j]
+			if(minLength <= substr.length  && substr.length <= maxLength && 
+				substr.chars.length <= maxUnique)
+				if m_hash[substr]
+					m_hash[substr] += 1
+				else m_hash[substr]
+					m_hash[substr] = 0
+				end
+			end
+		end
+		break if j == s.length
+        j += 1
+	end
+	m_hash.values.max
+end
+
+p getMaxOccurrences("abcde", 2, 4, 26)
+p getMaxOccurrences("ababab", 2, 3, 4)

@@ -12,7 +12,6 @@ def abbreviation(a, b)
         (1..dp[0].size - 1).each do |j|
             ca = a[j - 1]
             cb = b[i - 1]
-
             if ca.upcase == ca
                 dp[i][j] = dp[i - 1][j - 1] if ca == cb
             else
@@ -20,7 +19,6 @@ def abbreviation(a, b)
             end
         end
     end
-
     dp[-1][-1] ? 'YES' : 'NO'
 end
 

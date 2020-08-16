@@ -30,3 +30,9 @@ end
 
 p reverseString("a,b,$,c")
 p reverseString("a,b,$,c,%,r")
+
+require 'date'
+
+p Date.today
+date = Date.today.prev_day
+p "#{date.year.to_s}-#{date.month.to_s}-#{date.day.to_s}"

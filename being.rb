@@ -24,3 +24,5 @@ p b1, b2, b3
 p b1.does_exist?
 p b2.does_exist?
 p b3.does_exist?
+
+p (1..10).map{|x|x**2}.reduce(:+)

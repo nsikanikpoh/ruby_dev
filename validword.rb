@@ -6,7 +6,7 @@ def valid_word?(word, characters)
 end
 
 p valid_word?(word, characters)
-p valid_word?("is", %w(i s))
+p valid_word?("is", %w(s i))
 p valid_word?("his", %w(i s h))
 p valid_word?("isp", %w(i s h j k o))
 p valid_word?("sylvester", %w(i s h j k o))

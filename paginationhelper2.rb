@@ -25,11 +25,12 @@ class PaginationHelper
   # returns the number of items on the current page. page_index is zero based.
   # this method should return -1 for page_index values that are out of range
   def page_item_count(page_indexa)
+    indexes = (0..page_count).to_a
  
   end
 
-  def index_calc(indexes, page_indexs)
-   
+  def index_calc(indexes, page_index)
+    
   end
 	
   # determines what page an item is on. Zero based indexes.

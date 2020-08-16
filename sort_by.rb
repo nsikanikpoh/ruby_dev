@@ -1,6 +1,6 @@
- p ["fanz","dru", "ba"].sort{|a,b| a.length <=> b.length }
+ p ["fanz","dru", "yhuhhj", "aaaa", "ba", "bb", "ab", "aaa"].sort_by{ |a| a.size }
 
- p ["glo", "mambo", "iz", "thoo"].sort_by{ |a| a.size }
+ p ["glo", "mambo", "iz", "thoo"].sort{|a,b| a.length <=> b.length }
 
  
  # Using #partition, two #sorts, and #flatten…
@@ -21,6 +21,7 @@ capitals = {
 }
 # Sorted alphanumerically (default) by values
 p capitals.sort_by{ |k,v| v }.to_h
+
 
 x = [-1, -3, -5, 3, 1, 5]
 p x.sort_by { |i| i } 

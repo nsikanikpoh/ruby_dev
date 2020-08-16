@@ -1,35 +1,51 @@
-def countMeetings(arrival, departure)
-    # Write your code here
-    times = []
-    din = departure.index(departure.min)
-    ain = arrival.index(arrival.min)
-    start_index = din
-    if ((departure[ain] - arrival[ain]) > (departure[din] - arrival[din]) && (arrival[ain] < arrival[din]))
-       start_index = ain
+class MeetingDay
+    attr_reader :first_day, :last_day, :days_available
+    def initialize(first_day, last_day, days_available)
+        @first_day = first_day
+        @last_day = last_day
+        @days_available = days_available
     end
-    times << [arrival[start_index], departure[start_index]].min
-    while (true)
-        arrival.delete_at(start_index)
-        departure.delete_at(start_index)
-        break if departure.empty?
-        din = departure.index(departure.min)
-        ain = arrival.index(arrival.min)
-        
-        if ((departure[ain] - arrival[ain]) > (departure[din] - arrival[din]) && (arrival[ain] < arrival[din]))
-           start_index = ain
-        else
-             start_index = din
-        end
-        
-        if departure[start_index] == times[-1]
-            break
-        else
-            times << departure[start_index]
-        end
+
+    def <=>(other_investor)
+        [@last_day, @days_available] <=> [other_investor.last_day, other_investor.days_available]
     end
-    (times.length <= 4) ? times.uniq.length : times.length
 end
 
+def countMeetings(firstDay, lastDay)
+    # Write your code here
+    meeting_days = []
+    n = firstDay.length
+    last_meeting_time = 0
+    meeting_count = 0
+    times = []
+    0.upto(n - 1) do |i|
+        meeting_days << MeetingDay.new(firstDay[i], lastDay[i], firstDay[i] + lastDay[i])
+    end
+    meeting_days.sort!
+    meeting_days.each.with_index do |md, idx|
+        if md.last_day >= last_meeting_time
+            if md.last_day == last_meeting_time 
+                if meeting_days[idx - 1].last_day - meeting_days[idx - 1].first_day >= n || md.first_day > meeting_days[idx - 1].first_day 
+                    last_meeting_time = md.last_day
+                    times << md.last_day
+                    meeting_count += 1
+                end
+                if (md.first_day == meeting_days[idx - 1].last_day && md.first_day == last_meeting_time )
+                    next
+                end
+                if (md.first_day < meeting_days[idx - 1].last_day && times.include?(md.first_day))
+                    next
+                end
+
+            end
+            last_meeting_time = md.last_day
+            times << md.last_day
+            meeting_count += 1
+        end
+    end
+    meeting_count
+end
+#p countMeetings([1,2,4,4,6], [3,4,5,6,8])#3
 p countMeetings([1,2,3,3,3], [2,2,3,4,4])#4
 p countMeetings([1,1,2], [1,2,2])#2
 p countMeetings([1,2,1,2,2], [3,2,1,3,3])#3

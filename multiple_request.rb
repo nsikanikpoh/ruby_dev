@@ -4,11 +4,15 @@ timestamps = []
 File.readlines(filename).each do |line|
   timestamps << line[regex]
 end
+p timestamps
  timestamps = timestamps.group_by(&:itself).transform_values(&:count).select{|k,v|v>1}
   .keys
  out_file = File.open("req_#{filename}", "w")
+
  timestamps.each{|timestamp| out_file.puts timestamp}
  out_file.close
+
+
  
 
 

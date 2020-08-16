@@ -18,12 +18,16 @@ ORDER BY
   employee.name,
   employee.age,
   employee.address,
-  CASE WHEN employee.marks > 90 THEN 'A+' WHEN employee.marks < 90
-  AND employee.marks > 70 THEN 'A' WHEN employee.marks < 70
-  AND employee.marks > 50 THEN 'B' WHEN employee.marks < 50
-  AND employee.marks >= 40 THEN 'C' ELSE 'Fail' END AS Grade
+  CASE WHEN employee.marks > 90 THEN 'A+' 
+  WHEN employee.marks < 90 AND employee.marks > 70 THEN 'A'
+  WHEN employee.marks < 70 AND employee.marks > 50 THEN 'B' 
+  WHEN employee.marks < 50 AND employee.marks >= 40 THEN 'C' 
+  ELSE 'Fail' 
+  END AS Grade
 FROM
   employee
 ORDER BY
   employee.id,
   employee.name;
+
+

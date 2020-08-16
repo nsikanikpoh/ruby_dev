@@ -11,9 +11,13 @@ def validBraces(braces)
   		brace == full_braces[stack.last] ? stack.pop : (return false)
   	end
   end
-
   stack.empty?
 end
 
 p validBraces( "()" )
 p validBraces( "[(])" )
+p validBraces("()(()){([()])}")
+p validBraces("((()(()){([()])}))")
+p validBraces(")(()){([()])}")
+p validBraces("({[])}")
+p validBraces("(")
