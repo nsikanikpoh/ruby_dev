@@ -1,11 +1,14 @@
+
 SELECT
   students.id,
   students.name,
   students.marks,
-  CASE WHEN students.marks > 90 THEN 'A+' WHEN students.marks < 90
-  AND students.marks > 70 THEN 'A' WHEN students.marks < 70
-  AND students.marks > 50 THEN 'B' WHEN students.marks < 50
-  AND students.marks >= 40 THEN 'C' ELSE 'Fail' END AS Grade
+  CASE WHEN students.marks > 90 THEN 'A+'
+  WHEN students.marks <= 90 AND students.marks > 70 THEN 'A' 
+  WHEN students.marks <= 70 AND students.marks > 50 THEN 'B' 
+  WHEN students.marks <= 50 AND students.marks >= 40 THEN 'C' 
+  ELSE 'Fail' 
+  END AS Grade
 FROM
   students
 ORDER BY

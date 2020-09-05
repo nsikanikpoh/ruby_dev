@@ -2,6 +2,7 @@ def nonDivisibleSubset(k,arr)
     new_arr= [0]*k
     res = 0
     arr.each{|x| new_arr[x % k] += 1 }
+    p new_arr
         (0...(k/2+1).floor).each do |i|
             if i == 0 || k == i*2
                 res += 1 unless new_arr[i].zero?
